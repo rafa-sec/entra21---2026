@@ -1,80 +1,102 @@
 import java.util.Scanner;
 
 public class Desafio {
-    public static void main(String[] args) {
-        //programa();
-        programa2();
-    }
-
-    public static void programa() {
-        Scanner input = new Scanner(System.in);
-
-        System.out.println("Digite seu username: ");
-        String username = input.nextLine();
-
-        System.out.println("Digite um número: ");
-        int numero1 = input.nextInt();
-
-        System.out.println("Digite outro número: ");
-        int numero2 = input.nextInt();
-        
-        System.out.println("Digite só mais um número: ");
-        int numero3 = input.nextInt();
-
-        int soma = numero1 + numero2 + numero3;
-        int divisao = soma/3;
-
-        System.out.println("Ok, " + username + " a média dos seus números é " + divisao);
-
-    }
-
-    public static void programa2() {
-        Scanner input = new Scanner(System.in);
-
-        String[] produtos = {"Pizza", "Hamburguer", "Refri", "Água"};
-        int[] preco = {50, 20, 8, 4};
-
-
-        System.out.println("Digite o nome de um produto: ");
-        String nomeproduto = input.nextLine();
-
-
-
-        System.out.println("Digite a quantidade do produto: ");
-        int qtd = input.nextInt();
-
-        switch (nomeproduto) {
-            case "Pizza":
-                int precofinal = preco[0];
-                int total = precofinal*qtd;
-                System.out.println("ok " + qtd + " " + nomeproduto + " vai ficar " + total + "R$");
-                break;
-                
-            case "Hamburguer":
-                precofinal = preco[1];
-                total = precofinal*qtd;
-                System.out.println("ok " + qtd + " " + nomeproduto + " vai ficar " + total + "R$");
-                break;
-
-            case "Refri":
-                precofinal = preco[2];
-                total = precofinal*qtd;
-                System.out.println("ok " + qtd + " " + nomeproduto + " vai ficar " + total + "R$");
-                break;
-
-            case "Água":
-                precofinal = preco[3];
-                total = precofinal*qtd;
-                System.out.println("ok " + qtd + " " + nomeproduto + " vai ficar " + total + "R$");
-                break;
-                
-            default:
-                throw new AssertionError();
+        static Scanner input = new Scanner(System.in);
+        public static void main(String[] args) {
+            //exercicio16();
+            //exercicio17();
+            //exercicio18();
+            exercicio19();
+            //exercicio20();
         }
 
 
+        public static void exercicio16() {
+
+            int nota1 = input.nextInt();
+            int nota2 = input.nextInt();
+            int nota3 = input.nextInt();
 
 
+            int soma = nota1+nota2+nota3;
+            int result = soma/3;
 
-    }
+            if (result >= 7){
+                System.out.println("Aprovado");
+            } else if (result >= 4 && result <= 6 ){
+                System.out.println("Recuperação");
+            } else {
+                System.out.println("Reprovado");
+            }
+
+
+        }
+
+        public static void exercicio17() {
+            System.out.println("Bem-vindo ao banco online!");
+            
+            System.out.println("Qual o seu salário?");
+            int salario = input.nextInt();
+            
+            System.out.println("Qual o valor do empréstimo?");
+            int emprestimo = input.nextInt();
+            
+            System.out.println("Em quantas parcelas você vai querer pagar?");
+            int parcela = input.nextInt();
+
+
+            int pormes = emprestimo/parcela;
+
+            if (salario >= pormes){
+                System.out.println("Você está apto a fazer o empréstimo!");
+            }else{
+                System.out.println("Você não está apto a fazer o empréstimo!");
+            }
+
+
+            
+        }
+
+        public static void exercicio18() {
+            int numeroPresetado = 14;
+
+
+            
+            System.out.println("Digite um número");
+            int numero = input.nextInt();
+
+
+            while (numero < numeroPresetado) {
+                System.out.println("É um número maior");
+                System.out.println("Tente outra vez");
+                numero = input.nextInt();
+            }
+
+            while (numero > numeroPresetado){
+                System.out.println("É um número menor");
+                System.out.println("Tente outra vez");
+                numero = input.nextInt();
+            }
+
+            if (numero == numeroPresetado){
+                System.out.println("Acertou!");
+            }
+        }
+
+        public static void exercicio19() {
+            System.out.println("Diga o seu peso: ");
+            double peso = input.nextByte();
+            
+            System.out.println("Digite sua altura");
+            double altura = input.nextByte();
+            
+            double alturaFinal = altura*altura;
+
+            double imc = peso/alturaFinal;
+
+            System.out.println("Seu IMC é: " + imc);
+
+
+        }
+
 }
