@@ -1,14 +1,18 @@
-
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
-
-public class aula {
+public class Aula {
 
     public static void main(String[] args) {
 
         //aulaArrays();
         //exercicio1();
-        exercicio2();
+        ///////exercicio2();
+        //exercicio3();
+        //exercicio4();
+        //exercicio5();
+        exercicio6();
         
     }
 
@@ -81,4 +85,98 @@ public class aula {
 
     }
 
+
+    public static void exercicio3(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite 10 valores com dígitos de 1 a 10.");
+        int[] array = {0,0,0,0,0,0,0,0,0,0};
+
+        for(int i = 0; i < array.length; i++){
+            int valor_atual = i+1;
+            System.out.println("Defina o valor " + "#" +valor_atual + " para a array: ");
+            int valor = scanner.nextInt();
+            array[i] = valor;
+        }
+
+        for (int i = array.length - 1; i >= 0; i--) {
+            System.out.print(array[i] + " ");
+        }
+    }
+
+    public static void exercicio4(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite 15 valores");
+        ArrayList<Integer> list = new ArrayList<>();
+
+        int i;
+        for(i = 0; i < 15; i++){
+            System.out.println("Defina o valor " + "#" + i + " para a array: ");
+            int valor = scanner.nextInt();
+            list.add(valor);
+        }
+
+        //Definir o valor máximo
+        int max = Collections.max(list);
+        int position = list.indexOf(max);
+
+
+        System.out.println("O maior valor é: "+max + " que esta na posição " + position);
+
+
+    }
+
+    public static void exercicio5(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite 8 valores");
+
+        //Definir uma ArrayList
+        ArrayList<Integer> list = new ArrayList<>();
+
+        //Pegar os 15 valores
+        for(int i = 0; i < 8; i++){
+            int valor_atual = i+1;
+            System.out.println("Defina o valor " + "#" +valor_atual + " para a array: ");
+            int valor = scanner.nextInt();
+            list.add(valor);
+        }
+
+        //Definir o valor máximo
+        int max = Collections.max(list);
+        //Deixar em ordem decrescente
+        Collections.sort(list, Collections.reverseOrder());
+
+
+        System.out.println("Do maior para o menor valor:");
+        for (int valor : list) {
+            System.out.println("Valor: " + valor);
+        }
+
+
+    }
+
+    public static void exercicio6(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite 6 valores");
+
+        //Definir uma ArrayList
+        ArrayList<Integer> list = new ArrayList<>();
+
+        //Pegar os 15 valores
+        for(int i = 0; i < 6; i++){
+            int valor_atual = i+1;
+            System.out.println("Defina o valor " + "#" +valor_atual + " para a array: ");
+            int valor = scanner.nextInt();
+            list.add(valor);
+        }
+
+        double sum = 0;
+        for(int valor: list){
+            sum += valor;
+        }
+        
+        double mean = sum / list.size();
+        System.out.println("A média é:" + mean);
+
+
+    }
 }
